@@ -1,179 +1,479 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رزومه من - احمدرضا فهیم‌پور</title>
-  <style>
-    body {
-      font-family: "Tahoma", sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      direction: rtl;
-    }
-    header {
-      background: #004466;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      margin: 0.5rem 0 0;
-    }
-    #lang-toggle {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: white;
-      color: #004466;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      background: white;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      margin-top: 0;
-      color: #004466;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #004466;
-      color: white;
-      margin-top: 2rem;
-    }
-    a {
-      color: #004466;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Professional CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .font-persian { font-family: 'Vazirmatn', sans-serif; }
+        .font-english { font-family: 'Inter', sans-serif; }
+        .smooth-transition { transition: all 0.3s ease-in-out; }
+        .fade-in { animation: fadeIn 0.6s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .skill-bar {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 8px;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        .section-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .contact-form input, .contact-form textarea {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 1);
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1 id="name">احمدرضا فهیم‌پور</h1>
-    <p id="subtitle">کارشناس ارشد مهندسی مکانیک</p>
-    <button id="lang-toggle">EN</button>
-  </header>
+<body class="font-english">
+    <!-- Language Switch & Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-white" id="nav-name">Your Name</h1>
+            <div class="flex items-center space-x-4">
+                <button id="lang-switch" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full smooth-transition">
+                    <i class="fas fa-language mr-2"></i>
+                    <span id="lang-text">فارسی</span>
+                </button>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-white hover:text-blue-200 smooth-transition nav-link" data-en="About" data-fa="درباره من">About</a>
+                    <a href="#education" class="text-white hover:text-blue-200 smooth-transition nav-link" data-en="Education" data-fa="تحصیلات">Education</a>
+                    <a href="#experience" class="text-white hover:text-blue-200 smooth-transition nav-link" data-en="Experience" data-fa="تجربه">Experience</a>
+                    <a href="#skills" class="text-white hover:text-blue-200 smooth-transition nav-link" data-en="Skills" data-fa="مهارت‌ها">Skills</a>
+                    <a href="#contact" class="text-white hover:text-blue-200 smooth-transition nav-link" data-en="Contact" data-fa="تماس">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <main>
-    <section>
-      <h2 id="about-title">درباره من</h2>
-      <p id="about-text">
-        علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی. 
-        هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.
-      </p>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="text-center text-white fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4" id="hero-name">Your Name</h1>
+            <p class="text-xl md:text-2xl mb-6 opacity-90" id="hero-title">Full Stack Developer</p>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-80" id="hero-intro">
+                Passionate developer creating innovative digital solutions with modern technologies and clean code.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="download-en" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 smooth-transition">
+                    <i class="fas fa-download mr-2"></i>
+                    <span class="download-text" data-en="Download CV (English)" data-fa="دانلود رزومه (انگلیسی)">Download CV (English)</span>
+                </button>
+                <button id="download-fa" class="bg-white/20 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 smooth-transition">
+                    <i class="fas fa-download mr-2"></i>
+                    <span class="download-text" data-en="Download CV (Persian)" data-fa="دانلود رزومه (فارسی)">Download CV (Persian)</span>
+                </button>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="skills-title">مهارت‌ها</h2>
-      <ul id="skills-list">
-        <li>تحلیل حرارتی و سیالاتی</li>
-        <li>شبیه‌سازی CFD (Fluent, COMSOL)</li>
-        <li>طراحی و مدل‌سازی CAD/CAE</li>
-        <li>تحلیل جریان دوفازی و توربولانس</li>
-      </ul>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="section-card rounded-2xl p-8 md:p-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center section-title" data-en="About Me" data-fa="درباره من">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-600 leading-relaxed mb-6 about-text" data-en="I'm a passionate full-stack developer with 5+ years of experience in creating web applications. I love turning complex problems into simple, beautiful designs." data-fa="من یک توسعه‌دهنده فول‌استک با بیش از ۵ سال تجربه در ایجاد اپلیکیشن‌های وب هستم. عاشق تبدیل مسائل پیچیده به طراحی‌های ساده و زیبا هستم.">
+                            I'm a passionate full-stack developer with 5+ years of experience in creating web applications. I love turning complex problems into simple, beautiful designs.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Python</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="edu-title">تحصیلات</h2>
-      <p id="edu-text">
-        <strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br>
-        <strong>کارشناسی:</strong> مهندسی مکانیک
-      </p>
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center section-title" data-en="Education" data-fa="تحصیلات">Education</h2>
+            <div class="space-y-6">
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 edu-degree" data-en="Master of Computer Science" data-fa="کارشناسی ارشد علوم کامپیوتر">Master of Computer Science</h3>
+                        <span class="text-purple-600 font-medium">2020-2022</span>
+                    </div>
+                    <p class="text-gray-600 edu-school" data-en="University of Technology" data-fa="دانشگاه صنعتی">University of Technology</p>
+                    <p class="text-gray-500 mt-2 edu-desc" data-en="Specialized in Software Engineering and AI" data-fa="تخصص در مهندسی نرم‌افزار و هوش مصنوعی">Specialized in Software Engineering and AI</p>
+                </div>
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 edu-degree" data-en="Bachelor of Software Engineering" data-fa="کارشناسی مهندسی نرم‌افزار">Bachelor of Software Engineering</h3>
+                        <span class="text-purple-600 font-medium">2016-2020</span>
+                    </div>
+                    <p class="text-gray-600 edu-school" data-en="State University" data-fa="دانشگاه دولتی">State University</p>
+                    <p class="text-gray-500 mt-2 edu-desc" data-en="GPA: 3.8/4.0 - Graduated with Honors" data-fa="معدل: ۱۸.۵/۲۰ - فارغ‌التحصیل با درجه عالی">GPA: 3.8/4.0 - Graduated with Honors</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="contact-title">تماس</h2>
-      <p id="email">📧 ایمیل: <a href="mailto:ar.fahimpour@gmail.com">ar.fahimpour@gmail.com</a></p>
-      <p id="linkedin">🔗 لینکدین: <a href="https://www.linkedin.com/in/ar-fahimpour" target="_blank">linkedin.com/in/ar-fahimpour</a></p>
-      <p id="phone">📱 شماره تماس: <a href="tel:+989376969410">(+98)9376969410</a></p>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center section-title" data-en="Work Experience" data-fa="تجربه کاری">Work Experience</h2>
+            <div class="space-y-6">
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 exp-title" data-en="Senior Full Stack Developer" data-fa="توسعه‌دهنده ارشد فول‌استک">Senior Full Stack Developer</h3>
+                        <span class="text-purple-600 font-medium">2022 - Present</span>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-2 exp-company" data-en="Tech Solutions Inc." data-fa="شرکت راه‌حل‌های فناوری">Tech Solutions Inc.</p>
+                    <ul class="text-gray-500 space-y-1">
+                        <li class="exp-desc" data-en="• Led development of 5+ web applications serving 10k+ users" data-fa="• رهبری توسعه ۵+ اپلیکیشن وب با ۱۰ هزار+ کاربر">• Led development of 5+ web applications serving 10k+ users</li>
+                        <li class="exp-desc" data-en="• Improved application performance by 40% through optimization" data-fa="• بهبود عملکرد اپلیکیشن تا ۴۰٪ از طریق بهینه‌سازی">• Improved application performance by 40% through optimization</li>
+                        <li class="exp-desc" data-en="• Mentored junior developers and conducted code reviews" data-fa="• راهنمایی توسعه‌دهندگان جونیور و بررسی کد">• Mentored junior developers and conducted code reviews</li>
+                    </ul>
+                </div>
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 exp-title" data-en="Frontend Developer" data-fa="توسعه‌دهنده فرانت‌اند">Frontend Developer</h3>
+                        <span class="text-purple-600 font-medium">2020 - 2022</span>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-2 exp-company" data-en="Digital Agency" data-fa="آژانس دیجیتال">Digital Agency</p>
+                    <ul class="text-gray-500 space-y-1">
+                        <li class="exp-desc" data-en="• Developed responsive websites for 20+ clients" data-fa="• توسعه وب‌سایت‌های ریسپانسیو برای ۲۰+ مشتری">• Developed responsive websites for 20+ clients</li>
+                        <li class="exp-desc" data-en="• Collaborated with design team to implement UI/UX designs" data-fa="• همکاری با تیم طراحی برای پیاده‌سازی طراحی UI/UX">• Collaborated with design team to implement UI/UX designs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer id="footer">
-    © 2025 - طراحی شده توسط احمدرضا فهیم‌پور
-  </footer>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center section-title" data-en="Skills" data-fa="مهارت‌ها">Skills</h2>
+            <div class="section-card rounded-2xl p-8 fade-in">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6 skill-category" data-en="Technical Skills" data-fa="مهارت‌های فنی">Technical Skills</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">JavaScript/TypeScript</span>
+                                    <span class="text-gray-500">90%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">React/Next.js</span>
+                                    <span class="text-gray-500">85%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Node.js/Express</span>
+                                    <span class="text-gray-500">80%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="text-gray-700">Python/Django</span>
+                                    <span class="text-gray-500">75%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="skill-bar rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6 skill-category" data-en="Tools & Technologies" data-fa="ابزارها و فناوری‌ها">Tools & Technologies</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fab fa-git-alt text-3xl text-orange-500 mb-2"></i>
+                                <p class="text-sm text-gray-600">Git</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fab fa-docker text-3xl text-blue-500 mb-2"></i>
+                                <p class="text-sm text-gray-600">Docker</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fab fa-aws text-3xl text-yellow-500 mb-2"></i>
+                                <p class="text-sm text-gray-600">AWS</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fas fa-database text-3xl text-green-500 mb-2"></i>
+                                <p class="text-sm text-gray-600">MongoDB</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fas fa-database text-3xl text-blue-600 mb-2"></i>
+                                <p class="text-sm text-gray-600">PostgreSQL</p>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fab fa-figma text-3xl text-purple-500 mb-2"></i>
+                                <p class="text-sm text-gray-600">Figma</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const langToggle = document.getElementById("lang-toggle");
-    let currentLang = "fa";
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center section-title" data-en="Get In Touch" data-fa="تماس با من">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 contact-form-title" data-en="Send Message" data-fa="ارسال پیام">Send Message</h3>
+                    <form class="contact-form space-y-4" id="contact-form">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg smooth-transition" id="name-input" data-placeholder-en="Your Name" data-placeholder-fa="نام شما" required>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg smooth-transition" id="email-input" data-placeholder-en="Your Email" data-placeholder-fa="ایمیل شما" required>
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-lg smooth-transition" id="message-input" data-placeholder-en="Your Message" data-placeholder-fa="پیام شما" required></textarea>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 smooth-transition">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            <span class="send-btn-text" data-en="Send Message" data-fa="ارسال پیام">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="section-card rounded-xl p-6 fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6 contact-info-title" data-en="Contact Information" data-fa="اطلاعات تماس">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600 text-sm contact-label" data-en="Email" data-fa="ایمیل">Email</p>
+                                <p class="text-gray-800 font-medium">your.email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600 text-sm contact-label" data-en="Phone" data-fa="تلفن">Phone</p>
+                                <p class="text-gray-800 font-medium">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600 text-sm contact-label" data-en="Location" data-fa="موقعیت">Location</p>
+                                <p class="text-gray-800 font-medium location-text" data-en="New York, USA" data-fa="تهران، ایران">New York, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4 social-title" data-en="Follow Me" data-fa="دنبال کنید">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 smooth-transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-gray-900 smooth-transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 smooth-transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 smooth-transition">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const content = {
-      fa: {
-        name: "احمدرضا فهیم‌پور",
-        subtitle: "کارشناس ارشد مهندسی مکانیک",
-        aboutTitle: "درباره من",
-        aboutText: "علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی. هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.",
-        skillsTitle: "مهارت‌ها",
-        skillsList: ["تحلیل حرارتی و سیالاتی","شبیه‌سازی CFD (Fluent, COMSOL)","طراحی و مدل‌سازی CAD/CAE","تحلیل جریان دوفازی و توربولانس"],
-        eduTitle: "تحصیلات",
-        eduText: "<strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br><strong>کارشناسی:</strong> مهندسی مکانیک",
-        contactTitle: "تماس",
-        footer: "© 2025 - طراحی شده توسط احمدرضا فهیم‌پور",
-        dir: "rtl"
-      },
-      en: {
-        name: "Ahmadreza Fahimpour",
-        subtitle: "MSc in Mechanical Engineering",
-        aboutTitle: "About Me",
-        aboutText: "Passionate about research in heat transfer, fluid mechanics, and numerical simulations. My goal is to contribute to industrial and research projects using advanced simulation tools.",
-        skillsTitle: "Skills",
-        skillsList: ["Thermal and Fluid Analysis","CFD Simulation (Fluent, COMSOL)","CAD/CAE Design and Modeling","Multiphase Flow and Turbulence Analysis"],
-        eduTitle: "Education",
-        eduText: "<strong>MSc:</strong> Mechanical Engineering - Energy Conversion<br><strong>BSc:</strong> Mechanical Engineering",
-        contactTitle: "Contact",
-        footer: "© 2025 - Designed by Ahmadreza Fahimpour",
-        dir: "ltr"
-      }
-    };
+    <!-- Footer -->
+    <footer class="py-8 px-4 text-center text-white/80">
+        <p class="footer-text" data-en="© 2024 Your Name. All rights reserved." data-fa="© ۱۴۰۳ نام شما. تمامی حقوق محفوظ است.">© 2024 Your Name. All rights reserved.</p>
+    </footer>
 
-    function updateContent(lang) {
-      document.body.style.direction = content[lang].dir;
-      document.getElementById("name").innerHTML = content[lang].name;
-      document.getElementById("subtitle").innerHTML = content[lang].subtitle;
-      document.getElementById("about-title").innerHTML = content[lang].aboutTitle;
-      document.getElementById("about-text").innerHTML = content[lang].aboutText;
-      document.getElementById("skills-title").innerHTML = content[lang].skillsTitle;
-      document.getElementById("skills-list").innerHTML = content[lang].skillsList.map(item => `<li>${item}</li>`).join("");
-      document.getElementById("edu-title").innerHTML = content[lang].eduTitle;
-      document.getElementById("edu-text").innerHTML = content[lang].eduText;
-      document.getElementById("contact-title").innerHTML = content[lang].contactTitle;
-      document.getElementById("footer").innerHTML = content[lang].footer;
-    }
-
-    langToggle.addEventListener("click", () => {
-      if (currentLang === "fa") {
-        currentLang = "en";
-        langToggle.innerText = "FA";
-      } else {
-        currentLang = "fa";
-        langToggle.innerText = "EN";
-      }
-      updateContent(currentLang);
-    });
-  </script>
-</body>
+    <script>
+        let currentLang = 'en';
+        
+        // Language switching functionality
+        const langSwitch = document.getElementById('lang-switch');
+        const langText = document.getElementById('lang-text');
+        const html = document.documentElement;
+        
+        langSwitch.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fa' : 'en';
+            switchLanguage();
+        });
+        
+        function switchLanguage() {
+            // Update HTML attributes
+            html.lang = currentLang;
+            html.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+            
+            // Update font family
+            document.body.className = currentLang === 'fa' ? 'font-persian' : 'font-english';
+            
+            // Update language switch button
+            langText.textContent = currentLang === 'en' ? 'فارسی' : 'English';
+            
+            // Update all translatable elements
+            const elements = document.querySelectorAll('[data-en][data-fa]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${currentLang}`);
+                if (text) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            // Update specific elements by ID
+            const heroName = document.getElementById('hero-name');
+            const heroTitle = document.getElementById('hero-title');
+            const heroIntro = document.getElementById('hero-intro');
+            const navName = document.getElementById('nav-name');
+            
+            if (currentLang === 'fa') {
+                heroName.textContent = 'نام شما';
+                heroTitle.textContent = 'توسعه‌دهنده فول‌استک';
+                heroIntro.textContent = 'توسعه‌دهنده‌ای پرشور که راه‌حل‌های دیجیتال نوآورانه با فناوری‌های مدرن و کد تمیز ایجاد می‌کند.';
+                navName.textContent = 'نام شما';
+            } else {
+                heroName.textContent = 'Your Name';
+                heroTitle.textContent = 'Full Stack Developer';
+                heroIntro.textContent = 'Passionate developer creating innovative digital solutions with modern technologies and clean code.';
+                navName.textContent = 'Your Name';
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name-input').value;
+            const email = document.getElementById('email-input').value;
+            const message = document.getElementById('message-input').value;
+            
+            if (name && email && message) {
+                alert(currentLang === 'fa' ? 
+                    'پیام شما ارسال شد! به زودی با شما تماس خواهیم گرفت.' : 
+                    'Message sent successfully! We\'ll get back to you soon.'
+                );
+                this.reset();
+            }
+        });
+        
+        // CV download functionality
+        document.getElementById('download-en').addEventListener('click', function() {
+            // Create a sample PDF download (in real implementation, this would link to actual PDF files)
+            const link = document.createElement('a');
+            link.href = 'data:application/pdf;base64,'; // In real implementation, use actual PDF URL
+            link.download = 'CV_English.pdf';
+            alert(currentLang === 'fa' ? 
+                'در پیاده‌سازی واقعی، فایل PDF انگلیسی دانلود خواهد شد.' : 
+                'In real implementation, English PDF would be downloaded.');
+        });
+        
+        document.getElementById('download-fa').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'data:application/pdf;base64,'; // In real implementation, use actual PDF URL
+            link.download = 'CV_Persian.pdf';
+            alert(currentLang === 'fa' ? 
+                'در پیاده‌سازی واقعی، فایل PDF فارسی دانلود خواهد شد.' : 
+                'In real implementation, Persian PDF would be downloaded.');
+        });
+        
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+        
+        // Add fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            fadeObserver.observe(element);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97dde685b61c0ac2',t:'MTc1NzY2NDMzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
