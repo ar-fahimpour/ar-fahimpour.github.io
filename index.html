@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رزومه من - احمدرضا فهیم پور</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      direction: rtl;
+    }
+    header {
+      background: #004466;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+    }
+    #lang-toggle {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: white;
+      color: #004466;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: white;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin-top: 0;
+      color: #004466;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #004466;
+      color: white;
+      margin-top: 2rem;
+    }
+    a {
+      color: #004466;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="name">احمدرضا فهیم پور</h1>
+    <p id="subtitle">کارشناسی ارشد مهندسی مکانیک - تبدیل انرژی</p>
+    <button id="lang-toggle">EN</button>
+  </header>
+
+  <main>
+    <section>
+      <h2 id="about-title">درباره من</h2>
+      <p id="about-text">
+        علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی. 
+        هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="skills-title">مهارت‌ها</h2>
+      <ul id="skills-list">
+        <li>تحلیل حرارتی و سیالاتی</li>
+        <li>شبیه‌سازی CFD (Fluent, COMSOL)</li>
+        <li>طراحی و مدل‌سازی CAD/CAE</li>
+        <li>تحلیل جریان دوفازی و توربولانس</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 id="edu-title">تحصیلات</h2>
+      <p id="edu-text">
+        <strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br>
+        <strong>کارشناسی:</strong> مهندسی مکانیک
+      </p>
+    </section>
+
+    <section>
+      <h2 id="contact-title">تماس</h2>
+      <p id="email">📧 ایمیل: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p id="linkedin">🔗 لینکدین: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p id="github">📄 گیت‌هاب: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    © 2025 - طراحی شده توسط احمدرضا فهیم پور
+  </footer>
+
+  <script>
+    const langToggle = document.getElementById("lang-toggle");
+    let currentLang = "fa";
+
+    const content = {
+      fa: {
+        name: "احمدرضا فهیم پور",
+        subtitle: "کارشناسی ارشد مهندسی مکانیک - تبدیل انرژی",
+        aboutTitle: "درباره من",
+        aboutText: "علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی. هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.",
+        skillsTitle: "مهارت‌ها",
+        skillsList: ["تحلیل حرارتی و سیالاتی","شبیه‌سازی CFD (Fluent, COMSOL)","طراحی و مدل‌سازی CAD/CAE","تحلیل جریان دوفازی و توربولانس"],
+        eduTitle: "تحصیلات",
+        eduText: "<strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br><strong>کارشناسی:</strong> مهندسی مکانیک",
+        contactTitle: "تماس",
+        footer: "© 2025 - طراحی شده توسط احمدرضا فهیم پور",
+        dir: "rtl"
+      },
+      en: {
+        name: "Ahmadreza Fahimpour",
+        subtitle: "MSc in Mechanical Engineering - Energy Conversion",
+        aboutTitle: "About Me",
+        aboutText: "Passionate about research in heat transfer, fluid mechanics, and numerical simulations. My goal is to contribute to industrial and research projects using advanced simulation tools.",
+        skillsTitle: "Skills",
+        skillsList: ["Thermal and Fluid Analysis","CFD Simulation (Fluent, COMSOL)","CAD/CAE Design and Modeling","Multiphase Flow and Turbulence Analysis"],
+        eduTitle: "Education",
+        eduText: "<strong>MSc:</strong> Mechanical Engineering - Energy Conversion<br><strong>BSc:</strong> Mechanical Engineering",
+        contactTitle: "Contact",
+        footer: "© 2025 - Designed by Ahmadreza Fahimpour",
+        dir: "ltr"
+      }
+    };
+
+    function updateContent(lang) {
+      document.body.style.direction = content[lang].dir;
+      document.getElementById("name").innerHTML = content[lang].name;
+      document.getElementById("subtitle").innerHTML = content[lang].subtitle;
+      document.getElementById("about-title").innerHTML = content[lang].aboutTitle;
+      document.getElementById("about-text").innerHTML = content[lang].aboutText;
+      document.getElementById("skills-title").innerHTML = content[lang].skillsTitle;
+      document.getElementById("skills-list").innerHTML = content[lang].skillsList.map(item => `<li>${item}</li>`).join("");
+      document.getElementById("edu-title").innerHTML = content[lang].eduTitle;
+      document.getElementById("edu-text").innerHTML = content[lang].eduText;
+      document.getElementById("contact-title").innerHTML = content[lang].contactTitle;
+      document.getElementById("footer").innerHTML = content[lang].footer;
+    }
+
+    langToggle.addEventListener("click", () => {
+      if (currentLang === "fa") {
+        currentLang = "en";
+        langToggle.innerText = "FA";
+      } else {
+        currentLang = "fa";
+        langToggle.innerText = "EN";
+      }
+      updateContent(currentLang);
+    });
+  </script>
+</body>
+</html>
