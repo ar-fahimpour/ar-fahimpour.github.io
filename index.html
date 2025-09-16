@@ -1,131 +1,1199 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رزومه - احمدرضا فهیم‌پور</title>
-  <style>
-    body { font-family: "Tahoma", sans-serif; margin:0; padding:0; background:#f4f4f9; color:#333; direction:rtl; }
-    header { background:#004466; color:white; text-align:center; padding:2rem 1rem; position:relative; }
-    header h1 { margin:0; font-size:2.2rem; }
-    header p { margin:0.5rem 0 0; font-size:1.2rem; }
-    #lang-toggle { position:absolute; top:15px; left:15px; padding:0.5rem 1rem; border:none; border-radius:5px; background:white; color:#004466; cursor:pointer; font-weight:bold; }
-    main { max-width:900px; margin:2rem auto; padding:0 1rem; }
-    section { background:#fff; margin-bottom:1.5rem; padding:1.5rem; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    h2 { margin-top:0; color:#004466; border-bottom:2px solid #eee; padding-bottom:0.5rem; }
-    ul { padding-right:1.2rem; }
-    footer { background:#004466; color:white; text-align:center; padding:1rem; margin-top:2rem; }
-    a { color:#004466; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احمدرضا فهیم‌پور - مهندس مکانیک</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .font-vazir { font-family: 'Vazirmatn', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .lang-fa { display: block; }
+        .lang-en { display: none; }
+        
+        [dir="ltr"] .lang-fa { display: none; }
+        [dir="ltr"] .lang-en { display: block; }
+    </style>
 </head>
-<body>
-  <header>
-    <h1 id="name">احمدرضا فهیم‌پور</h1>
-    <p id="subtitle">کارشناس ارشد مهندسی مکانیک</p>
-    <button id="lang-toggle">EN</button>
-  </header>
+<body class="font-vazir bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-gray-800">
+                    <span class="lang-fa">احمدرضا فهیم‌پور</span>
+                    <span class="lang-en">Ahmadreza Fahimpour</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">درباره من</span>
+                        <span class="lang-en">About</span>
+                    </a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">تحصیلات</span>
+                        <span class="lang-en">Education</span>
+                    </a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">تجربه</span>
+                        <span class="lang-en">Experience</span>
+                    </a>
+                    <a href="#research" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">تحقیقات</span>
+                        <span class="lang-en">Research</span>
+                    </a>
+                    <a href="#courses" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">دوره‌ها</span>
+                        <span class="lang-en">Courses</span>
+                    </a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">مهارت‌ها</span>
+                        <span class="lang-en">Skills</span>
+                    </a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">پروژه‌ها</span>
+                        <span class="lang-en">Projects</span>
+                    </a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">
+                        <span class="lang-fa">تماس</span>
+                        <span class="lang-en">Contact</span>
+                    </a>
+                    <button onclick="toggleLanguage()" class="bg-blue-600 text-white px-3 py-1 rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                        <span class="lang-fa">EN</span>
+                        <span class="lang-en">فا</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <main>
-    <section>
-      <h2 id="about-title">درباره من</h2>
-      <p id="about-text">
-        علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی.
-        هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.
-      </p>
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <div class="w-32 h-32 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <i class="fas fa-user text-4xl"></i>
+            </div>
+            <h1 class="text-5xl font-bold mb-4">
+                <span class="lang-fa">احمدرضا فهیم‌پور</span>
+                <span class="lang-en">Ahmadreza Fahimpour</span>
+            </h1>
+            <p class="text-xl mb-2">
+                <span class="lang-fa">کارشناس ارشد مهندسی مکانیک</span>
+                <span class="lang-en">M.Sc. Mechanical Engineering</span>
+            </p>
+            <p class="text-lg mb-8 opacity-90">
+                <span class="lang-fa">گرایش تبدیل انرژی</span>
+                <span class="lang-en">Energy Conversion Specialization</span>
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                    <span class="lang-fa">تماس با من</span>
+                    <span class="lang-en">Contact Me</span>
+                </a>
+                <a href="#" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-colors">
+                    <span class="lang-fa">دانلود رزومه</span>
+                    <span class="lang-en">Download CV</span>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="skills-title">مهارت‌ها</h2>
-      <ul id="skills-list">
-        <li>تحلیل حرارتی و سیالاتی</li>
-        <li>شبیه‌سازی CFD (Fluent, COMSOL)</li>
-        <li>طراحی و مدل‌سازی CAD/CAE</li>
-        <li>تحلیل جریان دوفازی و توربولانس</li>
-      </ul>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">درباره من</span>
+                    <span class="lang-en">About Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8 h-80 flex items-center justify-center">
+                        <i class="fas fa-cogs text-6xl text-blue-600"></i>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                        <span class="lang-fa">خلاصه رزومه</span>
+                        <span class="lang-en">Resume Summary</span>
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        <span class="lang-fa">
+                            من احمدرضا فهیم‌پور هستم، کارشناس ارشد مهندسی مکانیک با تخصص در زمینه تبدیل انرژی. 
+                            علاقه‌مند به تحقیق و توسعه در حوزه انرژی، به‌ویژه نفت، گاز و پتروشیمی. هدف من مشارکت در پروژه‌های صنعتی بزرگ و بهینه‌سازی مصرف انرژی در فرآیندهای پیچیده با بهره‌گیری از دانش علمی و تخصص فنی است.
+                        </span>
+                        <span class="lang-en">
+                            I am Ahmadreza Fahimpour, a Master's degree holder in Mechanical Engineering with specialization in Energy Conversion. 
+                            Passionate about research and development in energy sector, especially oil, gas and petrochemicals. My goal is to participate in large industrial projects and optimize energy consumption in complex processes using scientific knowledge and technical expertise.
+                        </span>
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">
+                            <span class="lang-fa">تخصص</span>
+                            <span class="lang-en">Specialization</span>
+                        </h4>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                <span>
+                                    <span class="lang-fa">آشنایی نسبی با حوزه تکنولوژی</span>
+                                    <span class="lang-en">Relative familiarity with technology field</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                <span>
+                                    <span class="lang-fa">مسلط به نرم‌افزارهای انسیس فلوئنت، کامسول، متلب، CAD (اینونتور، سالیدورک و ...) و نرم‌افزارهای طراحی مبدل</span>
+                                    <span class="lang-en">Proficient in ANSYS Fluent, COMSOL, MATLAB, CAD software (Inventor, SolidWorks, etc.) and heat exchanger design software</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                <span>
+                                    <span class="lang-fa">آشنا به مباحث و استانداردهای نقشه‌کشی و GD&T</span>
+                                    <span class="lang-en">Familiar with technical drawing topics and GD&T standards</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                <span>
+                                    <span class="lang-fa">سابقه طراحی و شبیه‌سازی چندین پروژه در زمینه‌های مختلف</span>
+                                    <span class="lang-en">Experience in designing and simulating multiple projects in various fields</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">
+                            <span class="lang-fa">تحصیلات</span>
+                            <span class="lang-en">Education</span>
+                        </h4>
+                        <p class="text-sm text-gray-600">
+                            <span class="lang-fa">کارشناسی ارشد مهندسی مکانیک - گرایش تبدیل انرژی</span>
+                            <span class="lang-en">M.Sc. Mechanical Engineering - Energy Conversion</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="edu-title">تحصیلات</h2>
-      <p id="edu-text">
-        <strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br>
-        <strong>کارشناسی:</strong> مهندسی مکانیک
-      </p>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">سوابق تحصیلی</span>
+                    <span class="lang-en">Education</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- Master's Degree -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">کارشناسی‌ارشد مهندسی مکانیک</span>
+                                <span class="lang-en">M.Sc. Mechanical Engineering</span>
+                            </h3>
+                            <p class="text-blue-600 mb-2">
+                                <span class="lang-fa">دانشگاه صنعتی اصفهان • ۱۴۰۰ - ۱۴۰۳</span>
+                                <span class="lang-en">Isfahan University of Technology • 2021 - 2024</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">گرایش: تبدیل انرژی</span>
+                                <span class="lang-en">Specialization: Energy Conversion</span>
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="bg-green-50 px-3 py-1 rounded-full">
+                                    <span class="text-green-700 text-sm font-medium">
+                                        <span class="lang-fa">معدل: ۱۶.۲۰</span>
+                                        <span class="lang-en">GPA: 16.20/20</span>
+                                    </span>
+                                </div>
+                                <div class="bg-yellow-50 px-3 py-1 rounded-full">
+                                    <span class="text-yellow-700 text-sm font-medium">
+                                        <span class="lang-fa">دانشجوی ممتاز</span>
+                                        <span class="lang-en">Honor Student</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's Degree -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">کارشناسی مهندسی مکانیک</span>
+                                <span class="lang-en">B.Sc. Mechanical Engineering</span>
+                            </h3>
+                            <p class="text-blue-600 mb-2">
+                                <span class="lang-fa">دانشگاه صنعتی شاهرود • ۱۳۹۶ - ۱۴۰۰</span>
+                                <span class="lang-en">Shahrood University of Technology • 2017 - 2021</span>
+                            </p>
+                            <div class="bg-green-50 px-3 py-1 rounded-full inline-block">
+                                <span class="text-green-700 text-sm font-medium">
+                                    <span class="lang-fa">معدل: ۱۶.۰۰</span>
+                                    <span class="lang-en">GPA: 16.00/20</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2 id="contact-title">تماس</h2>
-      <p id="email">📧 ایمیل: <a href="mailto:ar.fahimpour@gmail.com">ar.fahimpour@gmail.com</a></p>
-      <p id="linkedin">🔗 لینکدین: <a href="https://www.linkedin.com/in/ar-fahimpour" target="_blank">linkedin.com/in/ar-fahimpour</a></p>
-      <p id="phone">📱 شماره تماس: <a href="tel:+989376969410">(+98)9376969410</a></p>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">تجربه کاری</span>
+                    <span class="lang-en">Work Experience</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- R&D Designer - Saairan Optics -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-lightbulb text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">طراح و کارشناس R&D</span>
+                                <span class="lang-en">R&D Designer & Specialist</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">صاایران صنایع اپتیک اصفهان</span>
+                                <span class="lang-en">Saairan Optics Industries Isfahan</span>
+                            </p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">طراحی و توسعه محصولات با استفاده از تکنیک‌های نوآورانه و تحلیل</span>
+                                        <span class="lang-en">Product design and development using innovative techniques and analysis</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">همکاری در پروژه‌های تحقیق و توسعه از ایده‌پردازی تا اجرای نهایی</span>
+                                        <span class="lang-en">Collaboration in R&D projects from ideation to final implementation</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">ایجاد و ارائه مستندات فنی و گزارش‌های پیشرفت به مدیریت</span>
+                                        <span class="lang-en">Creation and presentation of technical documentation and progress reports to management</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R&D Specialist - Ilia Sanat -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-flask text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">کارشناس R&D</span>
+                                <span class="lang-en">R&D Specialist</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">شرکت ایلیا صنعت آیسان</span>
+                                <span class="lang-en">Ilia Sanat Aysan Company</span>
+                            </p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">توسعه و بهینه‌سازی پروژه‌های تحقیق و توسعه در زمینه مکانیک</span>
+                                        <span class="lang-en">Development and optimization of R&D projects in mechanical engineering</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">تحلیل داده‌های آزمایشگاهی و ارائه گزارشات فنی به مدیریت</span>
+                                        <span class="lang-en">Laboratory data analysis and technical reporting to management</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">شبیه‌سازی و تحلیل فرایند رسوب شیمیایی بخار (CVD)</span>
+                                        <span class="lang-en">Simulation and analysis of Chemical Vapor Deposition (CVD) process</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Specialist - Neyshabur Gas -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-orange-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">کارشناس و ناظر ایمنی</span>
+                                <span class="lang-en">Safety Specialist & Supervisor</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">شرکت گاز نیشابور</span>
+                                <span class="lang-en">Neyshabur Gas Company</span>
+                            </p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">کارشناس و ناظر ایمنی ایستگاه‌های CGS و TBS</span>
+                                        <span class="lang-en">Safety specialist and supervisor for CGS and TBS stations</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">نظارت بر رعایت استانداردهای ایمنی و بهداشت</span>
+                                        <span class="lang-en">Supervision of safety and health standards compliance</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">تدوین و آموزش دستورالعمل‌های ایمنی به کارکنان</span>
+                                        <span class="lang-en">Development and training of safety procedures for employees</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship - Neyshabur Combined Cycle Power Plant -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-purple-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">کارآموز</span>
+                                <span class="lang-en">Intern</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">نیروگاه سیکل ترکیبی نیشابور</span>
+                                <span class="lang-en">Neyshabur Combined Cycle Power Plant</span>
+                            </p>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">آشنایی با تمامی تجهیزات نیروگاهی و فرآیندهای سیکل ترکیبی</span>
+                                        <span class="lang-en">Familiarization with all power plant equipment and combined cycle processes</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">مطالعه اجزای واحد گازی و سیکل بخار</span>
+                                        <span class="lang-en">Study of gas turbine unit components and steam cycle</span>
+                                    </span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <span>
+                                        <span class="lang-fa">درک عملکرد سیستم‌های کنترل و نظارت نیروگاه</span>
+                                        <span class="lang-en">Understanding power plant control and monitoring systems operation</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer id="footer">
-    © 2025 - طراحی شده توسط احمدرضا فهیم‌پور
-  </footer>
+    <!-- Research Section -->
+    <section id="research" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">تحقیقات</span>
+                    <span class="lang-en">Research</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- Pollutant Flow Detection Research -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-microscope text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">بررسی روش‌های تجربی جهت آشکارسازی جریان‌های آلاینده</span>
+                                <span class="lang-en">Investigation of Experimental Methods for Pollutant Flow Detection</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">پروژه کارشناسی - دانشگاه صنعتی شاهرود</span>
+                                <span class="lang-en">Bachelor's Project - Shahrood University of Technology</span>
+                            </p>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                <span class="lang-fa">
+                                    در این تحقیق روش‌های تجربی جهت آشکارسازی جریان‌های آلاینده و اندازه‌گیری آن‌ها و نیز سایر پارامترهای مهم در تهویه صنعتی مورد بررسی قرار می‌گیرد و اطلاعات مربوط به تجهیزات اندازه‌گیری، کالیبراسیون آن‌ها، روش‌های اندازه‌گیری و تحلیل داده‌ها مورد تحقیق قرار گرفته است.
+                                </span>
+                                <span class="lang-en">
+                                    This research investigates experimental methods for detecting pollutant flows and measuring them, as well as other important parameters in industrial ventilation. Information related to measurement equipment, their calibration, measurement methods, and data analysis has been researched.
+                                </span>
+                            </p>
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-semibold text-gray-800 mb-3">
+                                    <span class="lang-fa">موضوعات کلیدی تحقیق:</span>
+                                    <span class="lang-en">Key Research Topics:</span>
+                                </h4>
+                                <ul class="text-gray-600 space-y-2 text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                        <span>
+                                            <span class="lang-fa">روش‌های تجربی آشکارسازی آلاینده‌ها</span>
+                                            <span class="lang-en">Experimental methods for pollutant detection</span>
+                                        </span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                        <span>
+                                            <span class="lang-fa">تجهیزات اندازه‌گیری و کالیبراسیون</span>
+                                            <span class="lang-en">Measurement equipment and calibration</span>
+                                        </span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                        <span>
+                                            <span class="lang-fa">پارامترهای مهم تهویه صنعتی</span>
+                                            <span class="lang-en">Important industrial ventilation parameters</span>
+                                        </span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-green-500 mt-1 text-xs"></i>
+                                        <span>
+                                            <span class="lang-fa">روش‌های تحلیل داده‌های تجربی</span>
+                                            <span class="lang-en">Experimental data analysis methods</span>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">تهویه صنعتی</span>
+                                    <span class="lang-en">Industrial Ventilation</span>
+                                </span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">آشکارسازی آلاینده</span>
+                                    <span class="lang-en">Pollutant Detection</span>
+                                </span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">روش‌های تجربی</span>
+                                    <span class="lang-en">Experimental Methods</span>
+                                </span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">تحلیل داده</span>
+                                    <span class="lang-en">Data Analysis</span>
+                                </span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">کالیبراسیون</span>
+                                    <span class="lang-en">Calibration</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const langToggle = document.getElementById("lang-toggle");
-    let currentLang = "fa";
+    <!-- Courses & Certificates Section -->
+    <section id="courses" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">دوره‌ها و گواهینامه‌ها</span>
+                    <span class="lang-en">Courses & Certificates</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- CNC Training Course -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cogs text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">دوره آموزشی CNC</span>
+                                <span class="lang-en">CNC Training Course</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">موسسه فنی حرفه‌ای شاهرود</span>
+                                <span class="lang-en">Shahrood Technical and Vocational Institute</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    آموزش کامل برنامه‌نویسی و کار با دستگاه‌های CNC، شامل تکنیک‌های ماشین‌کاری دقیق و کنترل عددی
+                                </span>
+                                <span class="lang-en">
+                                    Complete training in CNC programming and operation, including precision machining techniques and numerical control
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CNC Programming</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">ماشین‌کاری</span>
+                                    <span class="lang-en">Machining</span>
+                                </span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">کنترل عددی</span>
+                                    <span class="lang-en">Numerical Control</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    const content = {
-      fa: {
-        name: "احمدرضا فهیم‌پور",
-        subtitle: "کارشناس ارشد مهندسی مکانیک",
-        aboutTitle: "درباره من",
-        aboutText: "علاقه‌مند به تحقیق و پژوهش در حوزه‌های انتقال حرارت، مکانیک سیالات و شبیه‌سازی عددی. هدف من مشارکت در پروژه‌های صنعتی و پژوهشی با استفاده از ابزارهای شبیه‌سازی پیشرفته است.",
-        skillsTitle: "مهارت‌ها",
-        skillsList: ["تحلیل حرارتی و سیالاتی","شبیه‌سازی CFD (Fluent, COMSOL)","طراحی و مدل‌سازی CAD/CAE","تحلیل جریان دوفازی و توربولانس"],
-        eduTitle: "تحصیلات",
-        eduText: "<strong>کارشناسی ارشد:</strong> مهندسی مکانیک - تبدیل انرژی<br><strong>کارشناسی:</strong> مهندسی مکانیک",
-        contactTitle: "تماس",
-        email: "📧 ایمیل: <a href='mailto:ar.fahimpour@gmail.com'>ar.fahimpour@gmail.com</a>",
-        linkedin: "🔗 لینکدین: <a href='https://www.linkedin.com/in/ar-fahimpour' target='_blank'>linkedin.com/in/ar-fahimpour</a>",
-        phone: "📱 شماره تماس: <a href='tel:+989376969410'>(+98)9376969410</a>",
-        footer: "© 2025 - طراحی شده توسط احمدرضا فهیم‌پور",
-        dir: "rtl"
-      },
-      en: {
-        name: "Ahmadreza Fahimpour",
-        subtitle: "MSc in Mechanical Engineering",
-        aboutTitle: "About Me",
-        aboutText: "Passionate about research in heat transfer, fluid mechanics, and numerical simulations. My goal is to contribute to industrial and research projects using advanced simulation tools.",
-        skillsTitle: "Skills",
-        skillsList: ["Thermal and Fluid Analysis","CFD Simulation (Fluent, COMSOL)","CAD/CAE Design and Modeling","Multiphase Flow and Turbulence Analysis"],
-        eduTitle: "Education",
-        eduText: "<strong>MSc:</strong> Mechanical Engineering - Energy Conversion<br><strong>BSc:</strong> Mechanical Engineering",
-        contactTitle: "Contact",
-        email: "📧 Email: <a href='mailto:ar.fahimpour@gmail.com'>ar.fahimpour@gmail.com</a>",
-        linkedin: "🔗 LinkedIn: <a href='https://www.linkedin.com/in/ar-fahimpour' target='_blank'>linkedin.com/in/ar-fahimpour</a>",
-        phone: "📱 Phone: <a href='tel:+989376969410'>(+98)9376969410</a>",
-        footer: "© 2025 - Designed by Ahmadreza Fahimpour",
-        dir: "ltr"
-      }
-    };
+                <!-- MATLAB Training Course -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calculator text-orange-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">دوره آموزشی نرم‌افزار متلب</span>
+                                <span class="lang-en">MATLAB Software Training Course</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">موسسه فنی حرفه‌ای شاهرود</span>
+                                <span class="lang-en">Shahrood Technical and Vocational Institute</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    آموزش جامع نرم‌افزار MATLAB شامل برنامه‌نویسی، تحلیل داده، شبیه‌سازی و حل مسائل مهندسی
+                                </span>
+                                <span class="lang-en">
+                                    Comprehensive MATLAB software training including programming, data analysis, simulation and engineering problem solving
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MATLAB</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">برنامه‌نویسی</span>
+                                    <span class="lang-en">Programming</span>
+                                </span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">تحلیل داده</span>
+                                    <span class="lang-en">Data Analysis</span>
+                                </span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">
+                                    <span class="lang-fa">شبیه‌سازی</span>
+                                    <span class="lang-en">Simulation</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function updateContent(lang) {
-      document.body.style.direction = content[lang].dir;
-      document.getElementById("name").innerHTML = content[lang].name;
-      document.getElementById("subtitle").innerHTML = content[lang].subtitle;
-      document.getElementById("about-title").innerHTML = content[lang].aboutTitle;
-      document.getElementById("about-text").innerHTML = content[lang].aboutText;
-      document.getElementById("skills-title").innerHTML = content[lang].skillsTitle;
-      document.getElementById("skills-list").innerHTML = content[lang].skillsList.map(item => `<li>${item}</li>`).join("");
-      document.getElementById("edu-title").innerHTML = content[lang].eduTitle;
-      document.getElementById("edu-text").innerHTML = content[lang].eduText;
-      document.getElementById("contact-title").innerHTML = content[lang].contactTitle;
-      document.getElementById("email").innerHTML = content[lang].email;
-      document.getElementById("linkedin").innerHTML = content[lang].linkedin;
-      document.getElementById("phone").innerHTML = content[lang].phone;
-      document.getElementById("footer").innerHTML = content[lang].footer;
-    }
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">مهارت‌ها</span>
+                    <span class="lang-en">Skills</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="fade-in">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">
+                    <span class="lang-fa">مهارت‌های نرم‌افزاری</span>
+                    <span class="lang-en">Software Skills</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Microsoft Office</span>
+                            <span class="text-gray-500">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">COMSOL Multiphysics</span>
+                            <span class="text-gray-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">ANSYS Fluent</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">MATLAB</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Autodesk Alias</span>
+                            <span class="text-gray-500">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">AutoCAD</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">Autodesk Inventor</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">SolidWorks</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">EES</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">PV Elite</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">HTRI</span>
+                            <span class="text-gray-500">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-700">ASPEN</span>
+                            <span class="text-gray-500">50%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    langToggle.addEventListener("click", () => {
-      currentLang = currentLang === "fa" ? "en" : "fa";
-      langToggle.innerText = currentLang === "fa" ? "EN" : "FA";
-      updateContent(currentLang);
-    });
-  </script>
-</body>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">پروژه‌ها</span>
+                    <span class="lang-en">Projects</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- CVD Simulation Project -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-atom text-blue-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">شبیه‌سازی فرآیند رسوب‌گذاری شیمیایی بخار (CVD)</span>
+                                <span class="lang-en">Chemical Vapor Deposition (CVD) Process Simulation</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">شرکت ایلیا صنعت آیسان</span>
+                                <span class="lang-en">Ilia Sanat Aysan Company</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    بررسی عددی تاثیر عوامل مختلف مانند سرعت جریان، هندسه بستر و تعداد ورودی‌های محفظه بر روی الگوی جریان سیال درون محفظه، پدیده‌های انتقال جرم و نرخ رسوب
+                                </span>
+                                <span class="lang-en">
+                                    Numerical investigation of various factors such as flow velocity, substrate geometry, and number of chamber inlets on fluid flow patterns within the chamber, mass transfer phenomena, and deposition rate
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CFD</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Mass Transfer</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Chemical Process</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DNA Sequencing Project -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-dna text-green-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">شبیه‌سازی فرآیند انتقال مایع در توالی‌یابی DNA با استفاده از ابزار پین</span>
+                                <span class="lang-en">Liquid Transfer Simulation in DNA Sequencing Using Pin Tool</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">پایان‌نامه کارشناسی‌ارشد</span>
+                                <span class="lang-en">Master's Thesis</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    شبیه‌سازی عددی جابجایی قطره در نرم‌افزار کامسول و بررسی عوامل موثر بر سرعت انتقال و حجم قطره به روش میدان فاز و دینامیک مش برای حرکت پین
+                                </span>
+                                <span class="lang-en">
+                                    Numerical simulation of droplet displacement in COMSOL software and investigation of factors affecting transfer velocity and droplet volume using phase field method and mesh dynamics for pin movement
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">COMSOL</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Phase Field</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Microfluidics</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Biotechnology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heat Exchanger Design Project -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-fire text-orange-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">طراحی مبدل حرارتی به عنوان بازیاب حرارتی</span>
+                                <span class="lang-en">Heat Exchanger Design as Heat Recovery System</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">شرکت انتقال گاز ایران (منطقه 2 عملیات انتقال گاز اصفهان) - شرکت فراگیر صنعت مهربین</span>
+                                <span class="lang-en">Iran Gas Transmission Company (Region 2 Isfahan) - Faragir Sanat Mehrbin Company</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    تهیه و ارائه دفترچه فنی مبدل، تحلیل با نرم افزارهای HTRI و ASPEN
+                                </span>
+                                <span class="lang-en">
+                                    Preparation and presentation of heat exchanger technical manual, analysis using HTRI and ASPEN software
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTRI</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">ASPEN</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Heat Recovery</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Gas Industry</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power Plant Optimization Project -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-industry text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">بهینه‌سازی مصرف سوخت نیروگاه حرارتی</span>
+                                <span class="lang-en">Thermal Power Plant Fuel Consumption Optimization</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">دانشگاه صنعتی اصفهان</span>
+                                <span class="lang-en">Isfahan University of Technology</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    هدف از این پروژه کمینه‌سازی دبی سوخت مصرفی و بیشینه‌سازی آنتالپی بخار تولیدی در یک نیروگاه حرارتی نمونه
+                                </span>
+                                <span class="lang-en">
+                                    The objective of this project is to minimize fuel consumption flow rate and maximize steam enthalpy production in a sample thermal power plant
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Optimization</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Energy Efficiency</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Power Plant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two-Phase Flow Simulation -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-water text-cyan-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">شبیه‌سازی رژیم‌های مختلف جریان دوفازی در نرم‌افزار فلوئنت</span>
+                                <span class="lang-en">Two-Phase Flow Regimes Simulation in Fluent Software</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">دانشگاه صنعتی اصفهان</span>
+                                <span class="lang-en">Isfahan University of Technology</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    کپچر‌کردن سه رژیم مختلف جریان حبابی، اسلاگ و انولار برای جریان دوفازی آب و هوا
+                                </span>
+                                <span class="lang-en">
+                                    Capturing three different flow regimes: bubbly, slug, and annular for air-water two-phase flow
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ANSYS Fluent</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Two-Phase Flow</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">CFD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PCR Microchannel Heat Transfer -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-microchip text-indigo-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">شبیه‌سازی انتقال حرارت در میکروکانال‌های دستگاه PCR</span>
+                                <span class="lang-en">Heat Transfer Simulation in PCR Device Microchannels</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">دانشگاه صنعتی اصفهان</span>
+                                <span class="lang-en">Isfahan University of Technology</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    بررسی انتقال حرارت در هیت‌سینک‌های میکروکانال و ارزیابی 7 سطح مقطع مختلف
+                                </span>
+                                <span class="lang-en">
+                                    Investigation of heat transfer in microchannel heat sinks and evaluation of 7 different cross-sectional areas
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ANSYS Fluent</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Heat Transfer</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Microchannels</span>
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">PCR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tube Bundle Flow Simulation -->
+                <div class="bg-white p-6 rounded-xl shadow-sm card-hover fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-circle-nodes text-teal-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                                <span class="lang-fa">شبیه‌سازی عددی جریان سیال در اطراف مجموعه لوله‌ها</span>
+                                <span class="lang-en">Numerical Simulation of Fluid Flow Around Tube Bundle</span>
+                            </h3>
+                            <p class="text-blue-600 mb-3">
+                                <span class="lang-fa">دانشگاه صنعتی اصفهان</span>
+                                <span class="lang-en">Isfahan University of Technology</span>
+                            </p>
+                            <p class="text-gray-600 mb-3">
+                                <span class="lang-fa">
+                                    بررسی تغییرات ضریب اصطکاک بر حسب عدد رینولدز در جریان هوای عبوری در اطراف مجموعه لوله‌های Staggered
+                                </span>
+                                <span class="lang-en">
+                                    Investigation of friction coefficient variations versus Reynolds number in air flow around staggered tube bundle
+                                </span>
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">CFD</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Tube Bundle</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Reynolds Number</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <span class="lang-fa">تماس با من</span>
+                    <span class="lang-en">Contact Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">
+                        <span class="lang-fa">اطلاعات تماس</span>
+                        <span class="lang-en">Contact Information</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">
+                                    <span class="lang-fa">ایمیل</span>
+                                    <span class="lang-en">Email</span>
+                                </p>
+                                <p class="text-gray-800 font-medium">ar.fahimpour@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">
+                                    <span class="lang-fa">تلفن</span>
+                                    <span class="lang-en">Phone</span>
+                                </p>
+                                <p class="text-gray-800 font-medium" dir="ltr">(+98) 937 696 9410</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-linkedin text-purple-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-600">LinkedIn</p>
+                                <p class="text-gray-800 font-medium">www.linkedin.com/in/ar-fahimpour</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <form class="bg-white p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">
+                            <span class="lang-fa">پیام بفرستید</span>
+                            <span class="lang-en">Send Message</span>
+                        </h3>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="نام / Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <input type="email" placeholder="ایمیل / Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <textarea rows="4" placeholder="پیام شما / Your Message" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                <span class="lang-fa">ارسال پیام</span>
+                                <span class="lang-en">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-4">
+                <span class="lang-fa">© ۲۰۲۴ احمدرضا فهیم‌پور. تمامی حقوق محفوظ است.</span>
+                <span class="lang-en">© 2024 Ahmadreza Fahimpour. All rights reserved.</span>
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('lang');
+            const currentDir = html.getAttribute('dir');
+            
+            if (currentLang === 'fa') {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                document.body.classList.remove('font-vazir');
+                document.body.classList.add('font-inter');
+            } else {
+                html.setAttribute('lang', 'fa');
+                html.setAttribute('dir', 'rtl');
+                document.body.classList.remove('font-inter');
+                document.body.classList.add('font-vazir');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('پیام شما ارسال شد! / Your message has been sent!');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9802fa1b735137dd',t:'MTc1ODA1MzEwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
